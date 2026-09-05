@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+data/*.pdf
+data/*.jpg
+data/*.jpeg
+data/*.png
+output.txt
