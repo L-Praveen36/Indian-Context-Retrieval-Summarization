@@ -11,7 +11,13 @@ def extract_text_direct(file_path: str) -> str:
     if ext in ['.html', '.htm']:
         with open(file_path, 'r', encoding='utf-8') as f:
             soup = BeautifulSoup(f, 'html.parser')
-            # Extract text and remove extra whitespace
+            
+            # Remove website boilerplate (navigation, footers, scripts, styles, sidebars)
+            junk_tags = ['script', 'style', 'nav', 'footer', 'header', 'aside', 'noscript']
+            for element in soup(junk_tags):
+                element.decompose()
+                
+            # Extract clean text and remove extra whitespace
             text = soup.get_text(separator='\n')
             lines = [line.strip() for line in text.split('\n') if line.strip()]
             return '\n'.join(lines)
