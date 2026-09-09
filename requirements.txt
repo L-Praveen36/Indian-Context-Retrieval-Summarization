@@ -3,3 +3,5 @@ pdfplumber
 pytesseract
 langdetect
 beautifulsoup4
+opencv-python
+numpy
