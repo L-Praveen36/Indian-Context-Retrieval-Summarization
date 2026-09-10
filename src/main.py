@@ -36,6 +36,7 @@ def extract_and_prepare(document_path: str) -> dict:
         "extraction_method": route,
         "detected_script": script,
         "detected_language": language,
+        "full_text": text,
         "text_preview": text[:200] + ("..." if len(text) > 200 else ""),
         "text_length": len(text)
     }
@@ -44,37 +45,55 @@ def extract_and_prepare(document_path: str) -> dict:
 
 if __name__ == "__main__":
     data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
-    images_dir = os.path.join(data_dir, 'images')
     
-    if not os.path.exists(images_dir):
-        print(f"Error: Could not find the images directory at {images_dir}")
+    if not os.path.exists(data_dir):
+        print(f"Error: Could not find the data directory at {data_dir}")
     else:
-        print(f"Starting batch OCR processing for images in: {images_dir}\n")
+        print(f"Starting batch processing for all files in: {data_dir}\n")
         
-        # Open a master file to save all results for easy review
-        with open("batch_ocr_results.txt", "w", encoding="utf-8") as out_file:
+        # Open separate master files for different categories
+        with open("batch_ocr_results.txt", "w", encoding="utf-8") as img_out, \
+             open("batch_html_results.txt", "w", encoding="utf-8") as html_out, \
+             open("batch_pdf_results.txt", "w", encoding="utf-8") as pdf_out:
             
-            # Walk through all subfolders (mixed, hindi, english, etc.)
-            for root, _, files in os.walk(images_dir):
+            # Walk through all subfolders (images, html, pdfs, etc.)
+            for root, _, files in os.walk(data_dir):
                 for filename in files:
-                    # Filter for image files only
-                    if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
-                        file_path = os.path.join(root, filename)
+                    ext = filename.lower()
+                    
+                    # Determine which file to write to based on extension
+                    if ext.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
+                        out_file = img_out
+                        file_type = "Image"
+                    elif ext.endswith(('.html', '.htm')):
+                        out_file = html_out
+                        file_type = "HTML"
+                    elif ext.endswith('.pdf'):
+                        out_file = pdf_out
+                        file_type = "PDF"
+                    else:
+                        continue  # Skip unsupported files
                         
-                        try:
-                            result = extract_and_prepare(file_path)
-                            
-                            # Print a short summary to the console
-                            print(f"Finished: {filename} -> Script: {result['detected_script']}")
-                            
-                            # Write the full details into our batch review file
-                            out_file.write(f"=== File: {filename} ===\n")
-                            out_file.write(f"Folder: {os.path.basename(root)}\n")
-                            out_file.write(f"Language: {result['detected_language']} | Script: {result['detected_script']}\n")
-                            out_file.write(f"Text Extracted:\n{result['text_preview']}\n")
-                            out_file.write("="*50 + "\n\n")
-                            
-                        except Exception as e:
-                            print(f"Error processing {filename}: {e}")
-                            
-        print("\nBatch processing complete! Open 'batch_ocr_results.txt' to review all the extracted text.")
+                    file_path = os.path.join(root, filename)
+                    
+                    try:
+                        result = extract_and_prepare(file_path)
+                        
+                        # Print a short summary to the console
+                        print(f"Finished [{file_type}]: {filename} -> Script: {result['detected_script']}")
+                        
+                        # Write the full details into the respective batch review file
+                        out_file.write(f"=== File: {filename} ===\n")
+                        out_file.write(f"Folder: {os.path.basename(root)}\n")
+                        out_file.write(f"Language: {result['detected_language']} | Script: {result['detected_script']}\n")
+                        out_file.write(f"Extraction Method: {result['extraction_method']}\n")
+                        out_file.write(f"Text Extracted:\n{result['full_text']}\n")
+                        out_file.write("="*50 + "\n\n")
+                        
+                    except Exception as e:
+                        print(f"Error processing {filename}: {e}")
+                        
+        print("\nBatch processing complete! Output files generated:")
+        print("- batch_ocr_results.txt (for Images)")
+        print("- batch_html_results.txt (for HTML)")
+        print("- batch_pdf_results.txt (for PDFs)")

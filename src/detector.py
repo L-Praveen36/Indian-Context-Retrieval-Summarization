@@ -27,26 +27,59 @@ def detect_script(text: str) -> str:
 def detect_language(text: str) -> str:
     """
     Detects the language of the text.
-    Handles English, Hindi, and attempts basic Sanskrit detection.
+    Handles English, Hindi, Sanskrit, and mixed-language content.
+    Cross-references with script detection for accuracy.
     """
     if not text or not text.strip():
         return "Unknown"
+    
+    # First, check what scripts are present
+    script = detect_script(text)
     
     try:
         # langdetect returns ISO 639-1 codes (e.g., 'en', 'hi', 'mr', 'ne')
         lang_code = detect(text)
         
+        # Helper logic to distinguish Sanskrit from Hindi (overriding langdetect)
+        is_sanskrit = False
+        if script in ["Devanagari", "Mixed"]:
+            # 1. Double Danda is virtually exclusive to Sanskrit verses
+            has_double_danda = '॥' in text
+            
+            # 2. Count strong Sanskrit grammatical markers (word-final halants)
+            sanskrit_markers = len(re.findall(r'म्\s|त्\s|म्$|त्$|ो5', text))
+            
+            # 3. Count common Hindi stopwords
+            padded = f" {text} ".replace('\n', ' ').replace('।', ' ')
+            hindi_words = [' है ', ' और ', ' में ', ' का ', ' की ', ' को ', ' से ', ' कि ', ' यह ', ' वह ', ' एक ', ' हैं ']
+            hindi_count = sum(padded.count(w) for w in hindi_words)
+            
+            # Decision Tree:
+            if has_double_danda or sanskrit_markers >= 2:
+                is_sanskrit = True
+            elif hindi_count >= 2:
+                is_sanskrit = False  # Definitely Hindi if it has multiple Hindi stopwords
+            elif lang_code == 'sa':
+                is_sanskrit = True
+            elif text.count('ः') >= 2 and hindi_count == 0:
+                is_sanskrit = True
+
+        # Handle Mixed script
+        if script == "Mixed":
+            if is_sanskrit:
+                return "Sanskrit + English"
+            # Default to Hindi+English if it has Devanagari but isn't Sanskrit
+            return "Hindi + English"
+        
+        # Handle Single script
+        if script == "Devanagari":
+            if is_sanskrit:
+                return "Sanskrit"
+            else:
+                return "Hindi"
+                
         if lang_code == 'en':
             return "English"
-        elif lang_code == 'hi':
-            return "Hindi"
-        elif lang_code == 'sa':  # 'sa' is rarely perfectly detected by langdetect
-            return "Sanskrit"
-        elif lang_code in ['mr', 'ne']: # Marathi, Nepali etc. often share Devanagari
-             script = detect_script(text)
-             if script == "Devanagari":
-                 return f"Other Devanagari ({lang_code})"
-             return f"Other ({lang_code})"
         else:
             return f"Other ({lang_code})"
             

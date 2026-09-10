@@ -1,72 +1,80 @@
 === File: eng1.jpeg ===
 Folder: english
-Language: English | Script: Mixed
+Language: English | Script: Latin
+Extraction Method: OCR_REQUIRED
 Text Extracted:
-Lifeistnotfa continuum of,
-buvof
-inevitable;problems\that/call)
-forstrensthvdeterminations
-fand-hard.works
-Baoiareonovens]
-ए्फ्य्य््ख्ख्च्छ
+Life is not a continuum of
+pleasant choices, but of
+inevitable problems that call
+for strength, determination,
+and hard work
+INQIAN PROVERE
 ==================================================
 
 === File: eng2.jpeg ===
 Folder: english
-Language: English | Script: Mixed
+Language: English | Script: Latin
+Extraction Method: OCR_REQUIRED
 Text Extracted:
 India shaped my mind,
 anchored my identity,
 influenced my beliefs,
-and made me who I am
-eee India matters to me
+and made me who Iam
++. India mateers to me
 and I would like to matter to India
-+ Shashi ‘Tharvor
-gh BEREAN PO
-eT we BS Bes SE जा 75...
+Shashi Tharoor
+its AMUSE Some 2S
+berg Reet apa SOI NPR ee SE
+PS, CEM Gal cbt se Oba OMe ae
 ==================================================
 
 === File: IMG-ENG-001.jpg ===
 Folder: english
-Language: English | Script: Mixed
+Language: English | Script: Latin
+Extraction Method: OCR_REQUIRED
 Text Extracted:
-From the Declaration of Independence, July 4, 7776
+From the Declaration of Independence, July 4, 1776
 We hold these truths to be self-evident, that all men are created
 equal, that they are endowed by their Creator with certain unalicn
-able Rights, tha...
+able Rights, that among these are Life, Liberty, and the pursuit of
+Happiness
+From the Constitution, the First Amendment: ~ ,
+Congress shall make no law respecting an establishment. of
+religion, or prohibiting the free exercise thereof; or abridging the
+freedom of speech or of the press; or the right of the people peace
+ably to assemble and to petition the Government for a redress of !
+srievances
+From the Constitution, the Thirteenth Amendment
+Neither slavery nor involuntary servitude, except as a
+punishment for crime whereof the party shall have been duly
+convicted, shall exist within the United States, or any place
+subject to. their jurisdiction
 ==================================================
 
 === File: hin1.jpeg ===
 Folder: hindi
 Language: Hindi | Script: Devanagari
+Extraction Method: OCR_REQUIRED
 Text Extracted:
 सुख चाहने वाले को विद्या और विद्या चाहने वाले को
-सुख त्याग देना चाहिए। सुख घाहने वाले के लिए
-विद्या कहाँ और विद्यार्थी के लिए सुख कहाँ ।
+सुख त्याग देना चाहिए। सुख चाहने याले के लिए
+विद्या कहाँ और विद्यार्थी के लिए सुख कहाँ
 ==================================================
 
 === File: hin2.jpeg ===
 Folder: hindi
-Language: Hindi | Script: Mixed
+Language: Hindi | Script: Devanagari
+Extraction Method: OCR_REQUIRED
 Text Extracted:
 अच्छी वाली अंग्रेजी न आती हो
 तो खतरनाक वाली हिंदी सीख लो है
 ज्ञानी उतने ही लगोगे।
-Ret chien | tebe Tew
-==================================================
-
-=== File: hin3.jpeg ===
-Folder: hindi
-Language: Hindi | Script: Mixed
-Text Extracted:
-mis आर fay
-भा बिक है।
-(एप दाग कब रे
 ==================================================
 
 === File: hin4.jpeg ===
 Folder: hindi
-Language: Hindi | Script: Mixed
+Language: Hindi + English | Script: Mixed
+Extraction Method: OCR_REQUIRED
 Text Extracted:
 TESSSeE DE
 “See ४ 9
@@ -76,63 +84,81 @@ TESSSeE DE
 
 === File: IMG-MIX-001.jpg ===
 Folder: mixed
-Language: Other (es) | Script: Mixed
+Language: Hindi + English | Script: Mixed
+Extraction Method: OCR_REQUIRED
 Text Extracted:
-CALI
-uase re arccron canoes
-(ine
-006%
->ल्प्स
-Sea ++
-==================================================
-
-=== File: IMG-MIX-002.jpg ===
-Folder: mixed
-Language: Other (af) | Script: Mixed
-Text Extracted:
-ca} ह “
-jwe= PES जल
-anne a Fy asin
-eee i \
-ee if bel i ie wk
-Zee |, Wy 8 \ dN
-==================================================
-
-=== File: mix-img1.png ===
-Folder: mixed
-Language: English | Script: Mixed
-Text Extracted:
-यदि सन्ति गुनाः पुंसां विकसन्त्येव ते स्वयम्‌।
-sans] = qunth ss pummsdms vasa
-ale कस्तुरिकामोदः शपथेन विभाव्यते॥
-kasturikamodah Sagath vibhavys
-If there are virtuous qualities in a person, they get ex...
+४- है रू ् . *. e z - #
+7 ; %
+न कै; ; है
+थ # 5 > बढ - an : डे ‘ तर
+५५ $ te : Ei P 3 “if g A " !
+दे कै > ‘ 4 5 P
+५ . 2 ‘ —
+की न * eee ee ee er Ce eS ee au A ५
+‘ ह ४ ७४६७७ per poy ‘3 — ? ~_- —— —— —— - ee
+wai a हे ad , कक
+< रेलिंग : a
+s ० बल
+is hy 2
+हु “985
+wd < | कि CS 4
+Py md
+te a in oo हि , ow » ® है है
+HE a
+प्र
+y H द
 ==================================================
 
 === File: mix-img2.png ===
 Folder: mixed
-Language: English | Script: Mixed
+Language: Sanskrit + English | Script: Mixed
+Extraction Method: OCR_REQUIRED
 Text Extracted:
-Gonesho Sonthrit Siok With Hindi Meaning Hindi & English
-wets oy oe ।
-arta Sa gen
-wie genet
-waded ett
-wets ed वहचेट neh
-Aewasene
-Peres nett पतन brn
-rom emt ० #
-wef अतकब को कप dee aie rete पुष्सी एक्टर...
+Ganesha Sanskrit Shlok With Hindi Meaning Hindi & English
+त्वमेव प्रत्यक्ष ere
+wis केवल कर्तासि ।
+ब्मेव केवल it
+wis केवल eit
+व्वमेव सर्व खत्विदं amt
+seer ॥
+Translation
+‘vomeva pratyaksam tettvamas! I
+‘tvameve kevalom kartasi
+tvamevakevalam dhartas
+‘vameve kevalam hartasi
+tvameva servem khalvidam brahmasi
+‘vam seksadatmasi ॥
+Hindi Meaning
+गणपति भगवान्‌ को प्रणाम है। ga men प्रत्यक्ष तत्तवहो। तुम्ही एकमाव कर्च हो, तुम्ही एकमात्र धर्ता हो और तुम्ही
+eas eid एकमात्र gd इन समस्त रूपों में विद्यमान ब्रह्म हे। तुम्ही साक्षात्‌ आत्मख्रूप हो। मैं सदा ऋत (सत्य
+से परे) बात कहता हू, सत्य का ही प्रतिषादन करता हूँ ॥
+मृषिकवाहन्‌ मोदकहस्त चामरकर्ण विलस्बित सूत ।
+वामनरूप महेश्वरपुत्र विश्नविनायक पाद नमस्ते ॥
+हे प्रभु, मूषक जिनका वाहन है, जिनके हस्तमें मोदक है ,चामर समान जिनके कर्ण हैं, जिन्होंने जेनऊ धारण कर रखा है,
+जिनका कद वामन रूप है और जो विद्वहर्त हैं ऐसे श्री विनायक, शिवपुत्र को, मेरा नमन है!
+‘Oh God who has the mouse ०६ his vehicle, and the sweet madhaka (7८8 ball) your hand,
+whose ears ore wide lke fans, wearing the sacred thread. Oh son of Lord Shiva who is of short
+stoture andwhe removes all obstacles, Lord Vinayaka, | bow at your feet
+कार्य मे Rofo we त्वि धातरि।
+mF नाशमायान्तु सर्वाणि सुरनायक ॥
+Translation
+keryam me siddhimayatu prasanne tvayi dhatari
+Vighnani naéemayantu servani suranayoka I
+Hindi Meaning
+है निर्माता, हे देवताओं के नेता, आपकी कृपा से मेरे प्रयासों में सकलता मिले मेरी सभी बाधाओं का अंत हो!
+English Meaning
+Oh! Creator, Oh leader of the gods: May success come to my efforts by your grace (lit. while
+you ere pleased); (and) May all the obstacles meet their end!
 ==================================================
 
 === File: mixed.jpeg ===
 Folder: mixed
-Language: Hindi | Script: Mixed
+Language: Hindi + English | Script: Mixed
+Extraction Method: OCR_REQUIRED
 Text Extracted:
-(5)
-Nat
+७७४
 न श्वः श्वमुपासीत। को ही मनुष्यस्य श्वो वेद।
-कर्म के भरोसे बिल्कुल मत बैठो| Hat करो, मनुष्य का
+कर्म के भरोसे बिल्कुल मत बैठो| कर्मों करो, मनुष्य का
 कल किसे ज्ञात है?
 Don’t rely on karma at all. Do your deeds, who
 knows a man’s future?
@@ -140,36 +166,46 @@ knows a man’s future?
 
 === File: mixed2.jpeg ===
 Folder: mixed
-Language: English | Script: Mixed
+Language: Sanskrit + English | Script: Mixed
+Extraction Method: OCR_REQUIRED
 Text Extracted:
 उत्थानेनामृतं लब्धमुत्थानेनासुरा Badr
 उत्थानेन महेन्द्रेण See प्राप्त॑ दिवीह च ॥
 ——— resanskrit.com ————
 Only due to their efforts were gods able to acquire Amruta and kill
-demons; Only due to his eff...
+demons; Only due to his efforts was Indra able to gain superiority in
+heaven and on earth
+— Mahabharata Shantiparva 58-4 ————
+देवों ने भी प्रयत्रों से ही अमृत प्राप्त किया था, Waal से ही असुरों का संहार किया था,
+तथा देवराज Sey ने भी प्रयत्न से ही हहलोक और स्वर्गलोक में श्रेष्ठता प्राप्त की थी।
+Re Hoded™
+>» a
+rok A
+oe x a
+tek bosgee
 ==================================================
 
 === File: san1.jpeg ===
 Folder: sanskrit
-Language: English | Script: Mixed
+Language: Sanskrit | Script: Devanagari
+Extraction Method: OCR_REQUIRED
 Text Extracted:
-ERS GR STG
-—SSoo
-GARICAGAIRIES
-(ARES. cers
-दीपक तिअनादन tt
-aa excl te meme
-ST Egy पी Cy
-> >्औज््क्‍ता 5
-Ga Tia 0
+॥शुभं करोति कल्याणम्‌
+आरोग्यं धनसंपदा
+शत्रुबुद्धेविनाशाय
+दीपकाय नमोःसस्‍्तुते ॥
+॥दीपज्योति: परब्रह्म
+दीपज्योतिर्जनार्दन
+दीपो हरतु मे पाप॑
+संध्यादीप नमो5स्तुते ॥
 ==================================================
 
 === File: san2.jpeg ===
 Folder: sanskrit
-Language: Other (mr) | Script: Mixed
+Language: Sanskrit | Script: Devanagari
+Extraction Method: OCR_REQUIRED
 Text Extracted:
-soa
 क्षणश: कणशश्नैव विद्यामर्थ च साधयेत्‌
-क्षणे नष्टे कुतो विद्या कणे Te Halt धनम्‌ ॥
+क्षणे नष्टे कुतो विद्या कणे नष्टे कुतो धनम्‌ ॥
 ==================================================
 
