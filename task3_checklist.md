@@ -1,7 +1,7 @@
 # Task 3: English & Devanagari OCR & Text Preparation - Progress Checklist
 
-## Phase 1: Classical Baseline & 40% Vertical Slice (Mid-Evaluation)
-- [x] **Project Scaffolding & Setup**
+## Phase 1: Classical Baseline 
+- [x] **Project Setup**
   - [x] Define module boundaries and repository structure.
   - [x] Configure virtual environment and base dependencies.
 - [x] **Direct Text Extraction**
@@ -29,11 +29,9 @@
   - [x] Automated router based on file extension and PDF text-layer density.
   - [x] Batch processing script capable of handling the entire `data/` directory.
   - [x] Categorized output routing (`batch_ocr_results.txt`, `html_results`, `pdf_results`).
-- [x] **Mid-Evaluation Deliverables**
-  - [x] Professional README with architecture, tech stack, and limitations.
-  - [x] Git commits successfully pushed to the `task-3-baseline` branch.
 
-## Phase 2: Neural / Deep Learning OCR Transition (Post-Mid-Eval)
+
+## Phase 2: Neural / Deep Learning OCR Transition 
 - [ ] **Advanced Text Detection (Addressing limitation #1 & #2)**
   - [ ] Implement CRAFT, EAST, or DBNet to localize text in complex photographic backgrounds.
   - [ ] Implement bounding box cropping for isolated text recognition.
