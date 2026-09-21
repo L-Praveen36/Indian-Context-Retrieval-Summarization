@@ -1,5 +1,4 @@
 === File: 1784881079-0989.jpg ===
-Folder: img
 Language: Hindi + English | Script: Mixed
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -9,7 +8,6 @@ Tee ont
 ==================================================
 
 === File: button_app_store.png ===
-Folder: img
 Language: English | Script: Latin
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -18,7 +16,6 @@ Text Extracted:
 ==================================================
 
 === File: flyout_72dpi._V270092858_.png ===
-Folder: img
 Language: English | Script: Latin
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -29,7 +26,6 @@ Shop now >
 ==================================================
 
 === File: history in hindi apnaupsc.in.jpg ===
-Folder: img
 Language: Hindi | Script: Devanagari
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -41,7 +37,6 @@ Text Extracted:
 ==================================================
 
 === File: lord-rama-and-sita-story-hindi.jpg ===
-Folder: img
 Language: Hindi + English | Script: Mixed
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -53,7 +48,6 @@ Text Extracted:
 ==================================================
 
 === File: MendelNewThistleLogo.png ===
-Folder: img
 Language: Unknown | Script: Unknown
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -61,7 +55,6 @@ Text Extracted:
 ==================================================
 
 === File: newsletter-header-red.jpg ===
-Folder: img
 Language: Hindi + English | Script: Mixed
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -70,7 +63,6 @@ sy | | History grows your वो एकता
 ==================================================
 
 === File: unesco_archives_white.png ===
-Folder: img
 Language: English | Script: Latin
 Extraction Method: OCR_REQUIRED
 Text Extracted:
@@ -82,7 +74,6 @@ Educational Senivioand
 ==================================================
 
 === File: yourprime-widget-piv-fallback._V310089192_.jpg ===
-Folder: img
 Language: English | Script: Latin
 Extraction Method: OCR_REQUIRED
 Text Extracted:

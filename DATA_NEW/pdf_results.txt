@@ -1,5 +1,4 @@
 === File: 4-DECLARATION-1.pdf ===
-Folder: pdf
 Language: English | Script: Latin
 Extraction Method: DIRECT_EXTRACTION
 Text Extracted:
@@ -5538,7 +5537,6 @@ Contribution,’ shall follow hereafter, opening with the first entry on 1-4-194
 ==================================================
 
 === File: ijsrp-p4233.pdf ===
-Folder: pdf
 Language: English | Script: Latin
 Extraction Method: DIRECT_EXTRACTION
 Text Extracted:
@@ -5901,7 +5899,6 @@ www.graceofsreerama.org
 ==================================================
 
 === File: References_to_the_Hare_Krishna_Maha-Mantra.pdf ===
-Folder: pdf
 Language: English | Script: Latin
 Extraction Method: DIRECT_EXTRACTION
 Text Extracted:

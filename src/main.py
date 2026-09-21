@@ -1,4 +1,5 @@
 import os
+import json
 from router import route_document
 from extractor import extract_text_direct
 from ocr_baseline import run_tesseract_ocr
@@ -44,7 +45,7 @@ def extract_and_prepare(document_path: str) -> dict:
     return result
 
 if __name__ == "__main__":
-    data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
+    data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'DATA_NEW')
     
     if not os.path.exists(data_dir):
         print(f"Error: Could not find the data directory at {data_dir}")
@@ -78,6 +79,11 @@ if __name__ == "__main__":
                     
                     try:
                         result = extract_and_prepare(file_path)
+                        
+                        # Save the structured payload as a JSON file for Task 4
+                        json_filename = os.path.join(root, filename + ".json")
+                        with open(json_filename, "w", encoding="utf-8") as j_file:
+                            json.dump(result, j_file, ensure_ascii=False, indent=4)
                         
                         # Print a short summary to the console
                         print(f"Finished [{file_type}]: {filename} -> Script: {result['detected_script']}")

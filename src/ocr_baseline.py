@@ -216,3 +216,46 @@ def run_tesseract_ocr(file_path: str) -> str:
     else:
         print(f"Unsupported file format for OCR: {ext}")
         return ""
+
+def run_ocr_with_confidence(image_matrix, lang='hin+eng'):
+    """
+    Runs Tesseract OCR on an image and calculates the average confidence score.
+    Returns: extracted_text, average_confidence, reliability_flag
+    """
+    from pytesseract import Output
+    
+    # Ask Tesseract for detailed dictionary output instead of just a string
+    ocr_data = pytesseract.image_to_data(image_matrix, lang=lang, output_type=Output.DICT)
+    
+    valid_words = []
+    confidences = []
+    
+    # Loop through everything Tesseract found
+    for i in range(len(ocr_data['text'])):
+        word = ocr_data['text'][i].strip()
+        conf = int(ocr_data['conf'][i])
+        
+        # Tesseract outputs a confidence of -1 for empty layout blocks
+        # We only want to score actual text words (confidence >= 0)
+        if len(word) > 0 and conf >= 0:
+            valid_words.append(word)
+            confidences.append(conf)
+            
+    # Rebuild the final text
+    extracted_text = " ".join(valid_words)
+    
+    # Calculate the average confidence of the entire passage
+    if len(confidences) > 0:
+        avg_confidence = sum(confidences) / len(confidences)
+    else:
+        avg_confidence = 0.0
+        
+    # Flag the reliability for Task 4 and Task 5
+    if avg_confidence >= 80.0:
+        reliability = "HIGH"
+    elif avg_confidence >= 60.0:
+        reliability = "MEDIUM"
+    else:
+        reliability = "LOW"
+        
+    return extracted_text, round(avg_confidence, 2), reliability

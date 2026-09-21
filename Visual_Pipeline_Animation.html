@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 - Pipeline Animation</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            background: #161b22;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            border: 1px solid #30363d;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #58a6ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        /* Nodes */
+        .node {
+            position: absolute;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid;
+            background: #0d1117;
+            z-index: 10;
+        }
+        .node-ingest { top: 250px; left: 20px; border-color: #8b949e; color: #8b949e; }
+        .node-router { top: 250px; left: 250px; border-color: #d2a8ff; color: #d2a8ff; }
+        .node-pymupdf { top: 100px; left: 550px; border-color: #3fb950; color: #3fb950; }
+        .node-ocr { top: 400px; left: 550px; border-color: #f85149; color: #f85149; }
+        .node-output { top: 250px; left: 850px; border-color: #58a6ff; color: #58a6ff; }
+
+        /* The Document Packet */
+        .packet {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background: white;
+            border-radius: 3px;
+            top: 265px;
+            left: 50px;
+            z-index: 20;
+            opacity: 0;
+            animation: flow 8s infinite linear;
+        }
+
+        /* Laser Scan inside Router */
+        .laser {
+            position: absolute;
+            width: 34px;
+            height: 2px;
+            background: #d2a8ff;
+            box-shadow: 0 0 10px #d2a8ff;
+            top: -5px;
+            left: -2px;
+            opacity: 0;
+            animation: scan 8s infinite linear;
+        }
+
+        /* Connecting Lines */
+        .line {
+            position: absolute;
+            background: #30363d;
+            z-index: 1;
+        }
+        .line-1 { top: 280px; left: 100px; width: 150px; height: 3px; }
+        .line-2 { top: 130px; left: 350px; width: 3px; height: 150px; }
+        .line-3 { top: 130px; left: 350px; width: 200px; height: 3px; }
+        .line-4 { top: 280px; left: 350px; width: 3px; height: 150px; }
+        .line-5 { top: 430px; left: 350px; width: 200px; height: 3px; }
+        .line-6 { top: 130px; left: 700px; width: 3px; height: 150px; }
+        .line-7 { top: 130px; left: 700px; width: 150px; height: 3px; }
+        .line-8 { top: 280px; left: 700px; width: 3px; height: 150px; }
+        .line-9 { top: 430px; left: 700px; width: 150px; height: 3px; }
+
+        @keyframes flow {
+            0% { left: 50px; top: 265px; opacity: 1; background: #fff; }
+            15% { left: 290px; top: 265px; opacity: 1; background: #fff; } /* Stop at router */
+            35% { left: 290px; top: 265px; opacity: 1; background: #f85149; } /* Identified as Image (Red) */
+            40% { left: 350px; top: 265px; opacity: 1; background: #f85149; } /* Move to branch */
+            45% { left: 350px; top: 415px; opacity: 1; background: #f85149; } /* Down to OCR */
+            55% { left: 580px; top: 415px; opacity: 1; background: #f85149; transform: scale(1); } /* Enter OCR */
+            60% { left: 580px; top: 415px; opacity: 1; transform: scale(1.5); } /* Processing 3-path */
+            70% { left: 580px; top: 415px; opacity: 1; transform: scale(1); background: #58a6ff; } /* Extracted Text (Blue) */
+            80% { left: 700px; top: 415px; opacity: 1; background: #58a6ff; } /* Up to merge */
+            85% { left: 700px; top: 265px; opacity: 1; background: #58a6ff; } /* Up to merge */
+            95% { left: 880px; top: 265px; opacity: 1; background: #58a6ff; } /* Output */
+            100% { left: 880px; top: 265px; opacity: 0; }
+        }
+
+        @keyframes scan {
+            0%, 15% { opacity: 0; top: -5px; }
+            16% { opacity: 1; top: -5px; }
+            25% { opacity: 1; top: 40px; }
+            34% { opacity: 1; top: -5px; }
+            35%, 100% { opacity: 0; top: -5px; }
+        }
+        
+        .ocr-details {
+            font-size: 10px;
+            margin-top: 10px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Task 3 Pipeline Architecture</div>
+        
+        <!-- Nodes -->
+        <div class="node node-ingest">DATA INGEST<br><span style="font-size:12px; font-weight:normal;">(Task 2 Hand-off)</span></div>
+        <div class="node node-router">DENSITY ROUTER<br><span style="font-size:12px; font-weight:normal;">(Text vs Image)</span></div>
+        <div class="node node-pymupdf">DIRECT EXTRACTION<br><span style="font-size:12px; font-weight:normal;">(PyMuPDF / HTML)</span></div>
+        <div class="node node-ocr">3-PATH OCR ENGINE<br>
+            <div class="ocr-details">1. Raw Grayscale<br>2. Otsu Global<br>3. Adaptive Gaussian</div>
+        </div>
+        <div class="node node-output">NORMALIZED TEXT<br><span style="font-size:12px; font-weight:normal;">(NFC + Metadata)</span></div>
+
+        <!-- Lines -->
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+        <div class="line line-4"></div>
+        <div class="line line-5"></div>
+        <div class="line line-6"></div>
+        <div class="line line-7"></div>
+        <div class="line line-8"></div>
+        <div class="line line-9"></div>
+
+        <!-- Animated Document -->
+        <div class="packet">
+            <div class="laser"></div>
+        </div>
+    </div>
+</body>
+</html>

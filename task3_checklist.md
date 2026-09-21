@@ -33,26 +33,15 @@
   - [x] Professional README with architecture, tech stack, and limitations.
   - [x] Git commits successfully pushed to the `task-3-baseline` branch.
 
-## Phase 2: Neural / Deep Learning OCR Transition (Post-Mid-Eval)
-- [ ] **Advanced Text Detection (Addressing limitation #1 & #2)**
-  - [ ] Implement CRAFT, EAST, or DBNet to localize text in complex photographic backgrounds.
-  - [ ] Implement bounding box cropping for isolated text recognition.
-- [ ] **Transformer-based Recognition (Addressing limitation #3)**
-  - [ ] Evaluate and integrate TrOCR, IndicOCR, or PaddleOCR for Devanagari.
-  - [ ] Robust handling of Devanagari Shirorekha (headline) degradation.
-- [ ] **Complex Layout Analysis**
-  - [ ] Implement table and multi-column extraction (e.g., LayoutLM).
-  - [ ] Reading order sorting (top-to-bottom, left-to-right alignment).
-- [ ] **Optimization**
-  - [ ] GPU (CUDA) integration for neural model inference speedup.
-
-## Phase 3: Final Integration & Task 4 Handoff
-- [ ] **Quality Assurance**
-  - [ ] Establish evaluation metrics (Character Error Rate - CER, Word Error Rate - WER).
-  - [ ] Benchmark Classical Pipeline vs. Neural Pipeline accuracy.
-- [ ] **Pipeline Hardening**
-  - [ ] Multiprocessing/Parallelization for bulk document processing.
-  - [ ] Advanced error handling for corrupted or inaccessible files.
-- [ ] **Summarization Handoff (Task 4)**
-  - [ ] Finalize standard JSON schema output format.
-  - [ ] Connect Task 3 outputs directly to the Summarization (Task 4) ingestion layer.
+## Phase 2: Neural Architecture & Final Integration (Post-Mid-Eval)
+- [ ] **Advanced Text Detection & Layout Analysis**
+  - [ ] Implement CRAFT (Character Region Awareness) to localize text in complex backgrounds.
+  - [ ] Implement LayoutLM for multi-column newspaper and table reading-order extraction.
+- [ ] **Transformer-based Recognition (Replacing Tesseract)**
+  - [ ] Integrate TrOCR to resolve the 60% WER caused by Devanagari spacebar and Shirorekha failures.
+- [ ] **Near-Duplicate Detection (Optimization)**
+  - [ ] Implement MinHash (Locality-Sensitive Hashing) to detect and destroy duplicate payloads from Task 2.
+- [ ] **Task 4 Handoff & Pipeline Hardening**
+  - [x] Finalize standard JSON schema output format (Metadata + Provenance).
+  - [x] Establish evaluation metrics (CER = 21%, WER = 60%).
+  - [ ] Build automated webhook/API handoff to seamlessly feed the JSONs to Task 4 Vector Database.

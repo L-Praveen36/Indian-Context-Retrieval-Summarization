@@ -1,0 +1,174 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task 3 Mid-Eval Presentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 { 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-weight: 800; 
+        }
+        .accent-red { color: #ff3333; }
+        .accent-green { color: #33ff77; }
+        .accent-blue { color: #33ccff; }
+        .split-container { 
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center; 
+            margin-top: 50px;
+        }
+        .split-item { 
+            width: 30%; 
+            text-align: center; 
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .huge-metric { 
+            font-size: 3em !important; 
+            font-weight: bold; 
+            color: #33ff77; 
+            margin: 0;
+        }
+        .sub-metric {
+            font-size: 1em;
+            color: #888;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: The Hook -->
+            <section data-auto-animate>
+                <h3 style="color: gray;">Task 2 Gives Us Chaos...</h3>
+            </section>
+            <section data-auto-animate>
+                <h3 style="color: gray;">Task 2 Gives Us Chaos...</h3>
+                <h1 style="font-size: 4em;">WE BUILD <span class="accent-blue">ORDER.</span></h1>
+                <p style="letter-spacing: 5px; color: #aaa;">Task 3: Text Extraction & Normalization</p>
+                <br>
+                <p style="font-size: 0.6em; color: #666;">Vivek & Praveen | Mid-Evaluation</p>
+            </section>
+
+            <!-- Slide 2: The Router -->
+            <section data-transition="slide">
+                <h2>The <span class="accent-blue">Intelligent</span> Router</h2>
+                <p style="color: #888;">We don't guess. We calculate.</p>
+                <div class="split-container">
+                    <div class="split-item" style="border: 2px solid #555;">
+                        <h4>1. Ingest</h4>
+                        <p style="font-size: 0.6em;">Raw PDF / HTML / Image</p>
+                    </div>
+                    <div style="font-size: 2em; color: #555;">&#10142;</div>
+                    <div class="split-item" style="border: 2px solid #33ccff;">
+                        <h4>2. X-Ray</h4>
+                        <p style="font-size: 0.6em;">Calculate Text-Layer Density</p>
+                    </div>
+                    <div style="font-size: 2em; color: #555;">&#10142;</div>
+                    <div class="split-item">
+                        <h4 class="accent-green">Direct</h4>
+                        <p style="font-size: 0.6em;">PyMuPDF (100% Accuracy)</p>
+                        <hr style="border-color: #444;">
+                        <h4 class="accent-red">Vision</h4>
+                        <p style="font-size: 0.6em;">3-Path OCR Pipeline</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: The 3-Path Engine -->
+            <section data-transition="zoom">
+                <h2>The <span class="accent-red">3-Path</span> Engine</h2>
+                <p style="color: #888;">Defeating background noise mathematically.</p>
+                <div class="split-container">
+                    <div class="split-item">
+                        <h4>Raw</h4>
+                        <p style="font-size: 0.5em; color: #aaa;">Digital Fonts</p>
+                    </div>
+                    <div class="split-item">
+                        <h4>Otsu</h4>
+                        <p style="font-size: 0.5em; color: #aaa;">Uniform Lighting</p>
+                    </div>
+                    <div class="split-item">
+                        <h4>Adaptive</h4>
+                        <p style="font-size: 0.5em; color: #aaa;">Shadows & Vignettes</p>
+                    </div>
+                </div>
+                <br>
+                <p style="font-size: 0.6em; color: #33ccff;">+ Heuristic Quality Scoring (Average Word Length)</p>
+            </section>
+
+            <!-- Slide 4: Indian Context -->
+            <section data-transition="convex">
+                <h2>The <span class="accent-blue">Indian</span> Context</h2>
+                <p style="color: #888;">Standard NLP fails here. We built a shield.</p>
+                <br>
+                <h4 style="font-family: monospace; background: #222; padding: 20px; border-radius: 10px;">
+                    <span style="color: #ff3333;">langdetect:</span> FAILURE (Hindi vs Sanskrit)
+                </h4>
+                <div style="font-size: 2em; color: #555;">&#8681;</div>
+                <h4 style="font-family: monospace; background: #113311; padding: 20px; border-radius: 10px;">
+                    <span class="accent-green">Our Heuristics:</span> Dandas (॥) & Stopwords
+                </h4>
+            </section>
+
+            <!-- Slide 5: The 50% Metrics -->
+            <section data-transition="fade">
+                <h3 style="color: gray; letter-spacing: 5px;">THE 50% MILESTONE</h3>
+                <br>
+                <div class="split-container" style="margin-top: 0;">
+                    <div>
+                        <h1 class="huge-metric">85%</h1>
+                        <p class="sub-metric">CER Baseline Floor</p>
+                    </div>
+                    <div>
+                        <h1 class="huge-metric">YES</h1>
+                        <p class="sub-metric">Confidence Tagging</p>
+                    </div>
+                    <div>
+                        <h1 class="huge-metric">100%</h1>
+                        <p class="sub-metric">Page Provenance</p>
+                    </div>
+                </div>
+                <br>
+                <p style="font-size: 0.6em; color: #888;">* Example CER. Update with your exact evaluation metrics.</p>
+            </section>
+
+            <!-- Slide 6: The Neural Future -->
+            <section data-transition="slide">
+                <h2>The <span class="accent-red">Neural</span> Future</h2>
+                <p style="color: #888;">The next 50%</p>
+                <ul style="font-size: 0.7em; line-height: 2;">
+                    <li><strong class="accent-blue">CRAFT:</strong> Neural Text Detection for complex photographs.</li>
+                    <li><strong class="accent-blue">TrOCR:</strong> Transformer OCR to solve Devanagari Shirorekha.</li>
+                    <li><strong class="accent-blue">LayoutLM:</strong> Multi-column newspaper layout analysis.</li>
+                    <li><strong class="accent-blue">MinHash:</strong> Near-duplicate content destruction.</li>
+                </ul>
+            </section>
+
+            <!-- Slide 7: End -->
+            <section data-transition="zoom">
+                <h1 style="font-size: 5em;">THANK <span class="accent-blue">YOU</span></h1>
+                <p style="color: gray;">Questions?</p>
+            </section>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            center: true
+        });
+    </script>
+</body>
+</html>
