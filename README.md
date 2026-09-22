@@ -1,4 +1,4 @@
-﻿# Task 3: English and Devanagari OCR & Text Preparation
+﻿# English and Devanagari OCR & Text Preparation
 
 **Project: Indian-Context-Aware Multilingual and Multimodal Web Retrieval & Summarization**
 
@@ -6,7 +6,7 @@
 
 This module serves as the 40% vertical slice for the project mid-evaluation. It is a strictly classical (non-neural) baseline pipeline designed to extract clean, machine-readable text from heterogeneous web documents. 
 
-The system accepts documents from the Web Retrieval module (Task 2) and automatically routes them based on file type and structural metadata. It supports English, Hindi, and Sanskrit across HTML pages, digital PDFs, scanned PDFs, and complex photographs. 
+The system accepts documents from the Web Retrieval module and automatically routes them based on file type and structural metadata. It supports English, Hindi, and Sanskrit across HTML pages, digital PDFs, scanned PDFs, and complex photographs. 
 
 Key achievements in this baseline:
 1. Built an end-to-end routing and extraction pipeline handling diverse file types natively.
@@ -162,7 +162,7 @@ This module is part of a larger collaborative project: **Indian-Context-Aware Mu
 
 This project is developed as part of an academic B.Tech Project (BTP).
 
-## Output & Handoff (Task 4 Integration)
+## Output & Handoff
 
 Our module guarantees that Task 4 receives completely clean, analysis-ready text. Our definitive output is a **Standardized JSON Payload** that contains:
 1. `full_text`: The UTF-8, NFC-normalized, completely repaired string.
