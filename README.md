@@ -24,53 +24,53 @@ Key achievements in this baseline:
 
 ## Pipeline Architecture
 
-`	ext
+```text
 Input Document
-       │
-       ├─
-┌──────▼────────────────────────────────────────┐
-│   Router    │ Analyzes file type and PDF text layers 
-│ (router.py) │ to determine the optimal extraction strategy
-└──────┬──────┴─────────────────────────────────┘
-       │
-       ├─► HTML / Text-PDF ──► Direct Extraction (extractor.py)
-       │                       └── BeautifulSoup / PyMuPDF
-       │
-       └─► Image / Scanned PDF ──► OCR Baseline (ocr_baseline.py)
-                                   ├── 3-Path Preprocessing (Otsu, Adaptive, Raw)
-                                   └── Tesseract OCR (Multi-PSM Strategy)
-       │
-       ├─
-┌──────▼────────────────────────────────────────┐
-│  Normalizer  │ Unicode NFC normalization (critical for Devanagari),
-│(normalizer.py│ line-break repair, and OCR artifact cleanup
-└──────┬───────┴────────────────────────────────┘
-       │
-       ├─
-┌──────▼────────────────────────────────────────┐
-│  Detector    │ Script detection (Latin / Devanagari / Mixed)
-│ (detector.py)│ Language detection (English / Hindi / Sanskrit)
-└──────┬───────┴────────────────────────────────┘
-       │
-       ├─
+       |
+       |
++------v----------------------------------------+
+|   Router    | Analyzes file type and PDF text layers 
+| (router.py) | to determine the optimal extraction strategy
++------+------+---------------------------------+
+       |
+       +--> HTML / Text-PDF --> Direct Extraction (extractor.py)
+       |                        +-- BeautifulSoup / PyMuPDF
+       |
+       +--> Image / Scanned PDF --> OCR Baseline (ocr_baseline.py)
+                                    +-- 3-Path Preprocessing (Otsu, Adaptive, Raw)
+                                    +-- Tesseract OCR (Multi-PSM Strategy)
+       |
+       |
++------v----------------------------------------+
+|  Normalizer  | Unicode NFC normalization (critical for Devanagari),
+|(normalizer.py| line-break repair, and OCR artifact cleanup
++------+-------+--------------------------------+
+       |
+       |
++------v----------------------------------------+
+|  Detector    | Script detection (Latin / Devanagari / Mixed)
+| (detector.py)| Language detection (English / Hindi / Sanskrit)
++------+-------+--------------------------------+
+       |
+       |
   Output JSON / Batch Text Files
-`
+```
 
 ## Project Structure
 
-`	ext
+```text
 TASK-3_BTP/
-├── src/
-│   ├── main.py              # Pipeline orchestrator and batch processor
-│   ├── router.py            # Routes documents to correct extraction path
-│   ├── extractor.py         # Direct text extraction (HTML, text-PDFs)
-│   ├── ocr_baseline.py      # Tesseract OCR with 3-path OpenCV preprocessing
-│   ├── normalizer.py        # Unicode normalization and artifact cleanup
-│   └── detector.py          # Script and language detection with Sanskrit heuristics
-├── data/                    # Test documents (HTML, PDFs, Images)
-├── requirements.txt         # Python dependencies
-└── README.md                # Project documentation
-`
+|-- src/
+|   |-- main.py              # Pipeline orchestrator and batch processor
+|   |-- router.py            # Routes documents to correct extraction path
+|   |-- extractor.py         # Direct text extraction (HTML, text-PDFs)
+|   |-- ocr_baseline.py      # Tesseract OCR with 3-path OpenCV preprocessing
+|   |-- normalizer.py        # Unicode normalization and artifact cleanup
+|   +-- detector.py          # Script and language detection with Sanskrit heuristics
+|-- data/                    # Test documents (HTML, PDFs, Images)
+|-- requirements.txt         # Python dependencies
++-- README.md                # Project documentation
+```
 
 ## Setup and Installation
 
@@ -92,7 +92,7 @@ Required language packs during installation:
 
 ### 2. Python Environment
 
-`ash
+```bash
 # Create and activate a virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
@@ -100,15 +100,15 @@ venv\Scripts\activate  # Windows
 
 # Install dependencies
 pip install -r requirements.txt
-`
+```
 
 ## Usage
 
 The primary entry point is configured to batch-process all documents in the `data/` directory.
 
-`ash
+```bash
 python src/main.py
-`
+```
 
 Upon execution, the script categorizes and processes every file, generating three output reports:
 1.  `batch_ocr_results.txt`: Contains extracted text from images.
