@@ -175,4 +175,4 @@ Our module guarantees that Task 4 receives completely clean, analysis-ready text
 For the final evaluation, we will replace components of the classical pipeline with Neural architectures:
 * **TrOCR (Transformer OCR):** To use language context to perfectly predict spacebars and solve the Devanagari 60% WER spacing failure.
 * **CRAFT & LayoutLM:** To preserve the true reading order of complex newspaper columns and magazine tables.
-* **MinHash (LSH):** To mathematically detect and destroy near-duplicate document payloads before they waste downstream Vector Database storage.
+* **MinHash (LSH):** To mathematically detect and destroy near-duplicate document payloads before they waste downstream Vector Database storage .
